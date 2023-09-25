@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from '../components'
 import { AvailableGameSize, API_HOST } from '../constants'
 import style from './Home.module.css'
-import {post} from '../utils/http'
+import {post, setToken} from '../utils/http'
 import React from 'react'
+import { useLocalStorage } from '../hooks'
+import { User } from './../types/User'
 
 
 
@@ -12,11 +14,16 @@ export default function Home() {
   const navigate = useNavigate()
   const [size, setSize] = useState(10)
 
+  const [user, setUser] = useLocalStorage<User | undefined>('user', undefined)  
+    
 
   //post request to create new game
   const handleStartClick = async ()=>{
-    await post(`${API_HOST}/api/games`, {
-      userId:"",
+    if (user) {
+      setToken(user.token)
+  }
+    await post(`/api/games`, {
+      userID:user?._id,
       size: size,
       moves: [[]],
       date:"",

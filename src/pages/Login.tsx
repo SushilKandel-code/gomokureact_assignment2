@@ -20,6 +20,7 @@ export default function Login() {
     const result = await login(username, password)
     if(result===true){
       navigate('/')
+
     }else{
       setErrorMessage(result)
     }

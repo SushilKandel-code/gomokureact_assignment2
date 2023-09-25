@@ -26,6 +26,7 @@ export default function Game() {
 
   //if user is not logged in, redirect to the login page
   if(!user) return <Navigate to="/login" replace/>
+  console.log(user);
   const _id= "";
   const userId= "";
   const date= "";
@@ -61,13 +62,14 @@ export default function Game() {
     setMoves(updatedMoves)
     //get request to get game details
     const getDetails = await get<GameData[]>('api/games')
+    console.log(getDetails);
     const currentDetails = getDetails[getDetails.length-1]
     const thisId = currentDetails._id 
 
-    //puting request to update game upon user making moves
+    // puting request to update game upon user making moves
     
     await putRequest(`${API_HOST}/api/games/${thisId}`,{
-      userId,
+      userID:user._id,
       size,
       moves,
       date,
@@ -91,7 +93,7 @@ export default function Game() {
     const currentDetails = getDetails[getDetails.length-1]
     const thisId = currentDetails._id 
     //putting request to update game upon restarting
-    await put(`${API_HOST}/api/games/${thisId}`,{
+    await put(`/api/games/${thisId}`,{
       userId,
       size,
       moves:[[]],
