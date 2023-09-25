@@ -1,9 +1,11 @@
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input, Message } from '../components'
+import {UserContext} from '../context'
 import style from './Login.module.css'
 
 export default function SignUp() {
+  const { register } = useContext(UserContext)
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -16,10 +18,11 @@ export default function SignUp() {
       setErrorMessage('Passwords do not match')
       return
     }
-    if (username === "admin" && password === "admin") {
-      navigate('/Home')
+    const result = await register(username, password)
+    if (result === true) {
+      navigate('/')
     } else {
-      setErrorMessage("Invalid username/password")
+      setErrorMessage(result)
     }
   }
 
@@ -67,15 +70,6 @@ export default function SignUp() {
         disabled={!username || !password || !confirmPassword}
       >
         Sign Up
-      </Button>
-
-      <Button
-        onClick={(e) => {
-          e.preventDefault()
-          navigate('../login')
-        }}
-      >
-        Login
       </Button>
     </form>
   )

@@ -12,25 +12,3 @@
     margin: 2rem auto;
     align-items: center;
   }
-
-  .footer{
-    width: 100%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-top: 2px solid gray;
-    background-image: linear-gradient(
-  -225deg,
-  #231557 0%,
-  #44107a 29%,
-  #ff1361 67%,
-  #fff800 100%
-);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-animation: textclip 2s linear infinite;
-  }

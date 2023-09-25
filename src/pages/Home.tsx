@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Route, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '../components'
-import { AvailableGameSize } from '../constants'
+import { AvailableGameSize, API_HOST } from '../constants'
 import style from './Home.module.css'
+import {post} from '../utils/http'
 import React from 'react'
-import Login from './Login'
 
 
 
@@ -13,11 +13,23 @@ export default function Home() {
   const [size, setSize] = useState(10)
 
 
+  //post request to create new game
+  const handleStartClick = async ()=>{
+    await post(`${API_HOST}/api/games`, {
+      userId:"",
+      size: size,
+      moves: [[]],
+      date:"",
+      result:""
+    })
+    navigate(`game?size=${size}`)
+  }
+
+
   return (
     <>
-  
       <label className={style.label}>
-        Game size
+        Selecte a Game size
         <select
           className={style.select}
           value={size.toString()}
@@ -31,24 +43,7 @@ export default function Home() {
           ))}
         </select>
       </label>
-      <Button type="button" onClick={
-        () => {
-        navigate(`../game?size=${size}`)  
-        }
-        }
-        >
-        Start Game
-      </Button>
-
-      <Button type="button" onClick={
-        () => {
-        window.confirm("Are you sure want to log out?")
-        navigate('/')  
-        }
-        }
-        >
-        Log out
-      </Button>
+      <Button type="button" onClick={handleStartClick}>Start Game</Button>
     </>
   )
 }

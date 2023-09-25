@@ -18,3 +18,5 @@ export enum GameStatus{
     Player2_Win = 'Player 2 wins',
     Draw = 'Game Draw'
 }
+
+export const API_HOST = process.env.REACT_APP_API_HOST || ''
