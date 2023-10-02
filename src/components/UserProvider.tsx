@@ -1,6 +1,7 @@
 import { User, Credential } from './../types/User'
 import { UserContext } from '../context'
 import { useLocalStorage } from '../hooks'
+import { API_HOST } from '../constants' 
 import { post, setToken } from '../utils/http'
 
 type UserProviderProps = {
