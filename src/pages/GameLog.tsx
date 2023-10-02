@@ -7,6 +7,7 @@ import { UserContext } from '../context'
 import style from './GameLog.module.css'
 import React from 'react'
 import { get } from '../utils/http'
+import { API_HOST } from '../constants'
 
 export default function GameLog() {
   const { user } = useContext(UserContext)

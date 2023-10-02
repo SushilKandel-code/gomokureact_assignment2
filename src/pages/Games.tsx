@@ -6,6 +6,7 @@ import type { GameData } from '../types'
 import style from './Games.module.css'
 import React from 'react'
 import {get} from '../utils/http'
+import { API_HOST } from '../constants'
 
 export default function Games() {
   const { user } = useContext(UserContext)
