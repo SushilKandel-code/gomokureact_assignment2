@@ -8,7 +8,6 @@ import {get} from '../utils/http'
 import { API_HOST } from '../constants'
 
 export default function Games() {
-  const { user } = useContext(UserContext)
   const navigate = useNavigate()
   const [gamesById, setGameById] = useState<GameData[]>([])
   
