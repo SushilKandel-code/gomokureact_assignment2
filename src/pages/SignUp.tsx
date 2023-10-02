@@ -20,6 +20,7 @@ export default function SignUp() {
     }
     const result = await register(username, password)
     if (result === true) {
+      window.alert("Account Created")
       navigate('/')
     } else {
       setErrorMessage(result)

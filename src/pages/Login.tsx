@@ -18,7 +18,8 @@ export default function Login() {
   const handleLogin = async () => {
     setErrorMessage('')
     const result = await login(username, password)
-    if(result===true){
+    if(result===true){ 
+      window.alert("Login Success")
       navigate('/')
 
     }else{

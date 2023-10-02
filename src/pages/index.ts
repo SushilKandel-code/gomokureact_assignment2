@@ -4,6 +4,6 @@ export { default as Games } from './Games'
 export { default as Home } from './Home'
 export { default as Login } from './Login'
 export { default as SignUp } from './SignUp'
-export { default as Forum } from './Forum'
-export { default as CreatePost } from './CreatePost'
+// export { default as Forum } from './Forum'
+// export { default as CreatePost } from './CreatePost'
  
