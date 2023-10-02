@@ -32,7 +32,6 @@ export default function Home() {
     navigate(`game?size=${size}`)
   }
 
-
   return (
     <>
       <label className={style.label}>
