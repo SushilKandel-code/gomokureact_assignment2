@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { Header, UserProvider } from './components'
 import { Home, Game, Games, GameLog, Login, SignUp} from './pages'
 import style from './App.module.css'
-import { hot } from 'react-hot-loader'
 
 function App() {
   return (

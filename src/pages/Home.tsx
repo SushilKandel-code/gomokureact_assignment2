@@ -14,7 +14,7 @@ export default function Home() {
   const navigate = useNavigate()
   const [size, setSize] = useState(10)
 
-  const [user, setUser] = useLocalStorage<User | undefined>('user', undefined)  
+  const [user] = useLocalStorage<User | undefined>('user', undefined)  
     
 
   //post request to create new game

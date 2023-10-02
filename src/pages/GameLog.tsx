@@ -1,7 +1,6 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { useContext, useEffect, useState} from 'react'
-import { useLocalStorage } from '../hooks'
-import { Board, Button, Message } from '../components'
+import { Board, Button } from '../components'
 import type { GameData } from '../types'
 import { UserContext } from '../context'
 import style from './GameLog.module.css'
@@ -14,8 +13,6 @@ export default function GameLog() {
   const { gameId = '' } = useParams()
   const navigate = useNavigate()
   const [gamesById, setGameById] = useState<GameData[]>([])
-  const [showMessage, setShowMessage] = useState(true)
-  let message = "Please wait for few seconds to load the game"
 
   //if user is not logged in, redirect to login page
   if(!user) return <Navigate to="/login" replace/>

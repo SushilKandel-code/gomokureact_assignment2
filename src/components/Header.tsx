@@ -7,7 +7,6 @@ export default function Header() {
   const navigate = useNavigate()
   const location = useLocation()
   const { user, logout } = useContext(UserContext)
-  const [themeApplied, setThemeNumber] = useState("")
 
 
   const getActions = () => {
