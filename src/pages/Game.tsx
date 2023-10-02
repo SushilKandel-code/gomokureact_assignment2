@@ -61,7 +61,7 @@ export default function Game() {
     }
     setMoves(updatedMoves)
     //get request to get game details
-    const getDetails = await get<GameData[]>('api/games')
+    const getDetails = await get<GameData[]>(`${API_HOST}api/games`)
     console.log(getDetails);
     const currentDetails = getDetails[getDetails.length-1]
     const thisId = currentDetails._id 
@@ -93,7 +93,7 @@ export default function Game() {
     const currentDetails = getDetails[getDetails.length-1]
     const thisId = currentDetails._id 
     //putting request to update game upon restarting
-    await put(`/api/games/${thisId}`,{
+    await put(`${API_HOST}/api/games/${thisId}`,{
       userId,
       size,
       moves:[[]],

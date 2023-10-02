@@ -16,7 +16,7 @@ export default function Games() {
   let message = "Please wait few seconds lo load past games"
 
   const getGameById = async () => {
-    const getDetails = await get<GameData[]>('../api/games')
+    const getDetails = await get<GameData[]>(`${API_HOST}/api/games`)
     console.log(getDetails)
     setGameById(getDetails)
   }
@@ -33,7 +33,7 @@ export default function Games() {
             </p>
             <button
               className={style.button}
-              onClick={() => navigate(`/game-log/${game._id}`)} // use timestamp as id
+              onClick={() => navigate(`${API_HOST}/game-log/${game._id}`)} // use timestamp as id
             >
               View game log
             </button>

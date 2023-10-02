@@ -22,14 +22,14 @@ export default function Home() {
     if (user) {
       setToken(user.token)
   }
-    await post(`/api/games`, {
+    await post(`${API_HOST}/api/games`, {
       userID:user?._id,
       size: size,
       moves: [[]],
       date:"",
       result:""
     })
-    navigate(`game?size=${size}`)
+    navigate(`${API_HOST}game?size=${size}`)
   }
 
   return (
@@ -42,7 +42,7 @@ export default function Home() {
           onChange={(event) => setSize(parseInt(event.target.value))}
         >
           {AvailableGameSize.map((value) => (
-            <option key={`size-${value}`} value={value.toString()}>
+            <option key={`${API_HOST}size-${value}`} value={value.toString()}>
               {value}
             </option>
             

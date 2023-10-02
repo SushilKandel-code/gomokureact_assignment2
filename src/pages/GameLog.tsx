@@ -20,7 +20,7 @@ export default function GameLog() {
   if(!user) return <Navigate to="/login" replace/>
 
   const getGameById = async () => {
-    const getDetails = await get<GameData[]>('../api/games')
+    const getDetails = await get<GameData[]>(`${API_HOST}/api/games`)
     setGameById(getDetails)
   }
 
