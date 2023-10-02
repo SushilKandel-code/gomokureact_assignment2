@@ -1,7 +1,8 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { UserContext } from '../context'
 import style from './Header.module.css'
+import React from 'react'
 
 export default function Header() {
   const navigate = useNavigate()
