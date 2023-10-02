@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useContext, useEffect, useState} from 'react'
-import {UserContext} from '../context'
+import { useEffect, useState} from 'react'
 import type { GameData } from '../types'
 import style from './Games.module.css'
 import React from 'react'
