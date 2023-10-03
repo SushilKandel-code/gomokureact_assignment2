@@ -20,12 +20,12 @@ export default function Header() {
           <button 
             className={style.action} 
             onClick={() => {
+              window.confirm("Are you sure want to logout?")
               logout()
-              
               navigate('/')
             }}
           >
-            LOGOUT
+            Logout
           </button>
         </>
       )
@@ -37,7 +37,7 @@ export default function Header() {
         </button>      
       ) : (
         <button className={style.action} onClick={() => navigate('/sign-up')}>
-          SIGN UP
+          REGISTER
         </button>
       )
     }
