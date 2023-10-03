@@ -21,6 +21,8 @@ export default function Home() {
   const handleStartClick = async ()=>{
     if (user) {
       setToken(user.token)
+  }else{
+    window.alert('Token Missing. Please Login first')
   }
     await post(`${API_HOST}/api/games`, {
       userID:user?._id,

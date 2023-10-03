@@ -114,7 +114,6 @@ export default function Game() {
         { _id, userId, size, moves, date: new Date().toString(), result: gameStatus },
       ])
       navigate('/games')
-      navigate('/games')
       //  GET request to get game details.
       const getDetails = await get<GameData[]>('api/games')
       const currentDetails = getDetails[getDetails.length-1]
