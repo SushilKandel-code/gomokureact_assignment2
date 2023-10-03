@@ -19,9 +19,6 @@ export default function Home() {
 
   //post request to create new game
   const handleStartClick = async ()=>{
-    if(!user){
-      window.alert("Token Missing")
-    }
     if (user) {
       setToken(user.token)
   }

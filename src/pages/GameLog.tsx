@@ -15,8 +15,10 @@ export default function GameLog() {
   const [gamesById, setGameById] = useState<GameData[]>([])
 
   //if user is not logged in, redirect to login page
-  if(!user) return <Navigate to="/login" replace/>
-
+  if(!user) {
+    window.alert("You must login")
+    return <Navigate to="/login" replace/>
+  }
   const getGameById = async () => {
     const getDetails = await get<GameData[]>(`${API_HOST}/api/games`)
     setGameById(getDetails)
