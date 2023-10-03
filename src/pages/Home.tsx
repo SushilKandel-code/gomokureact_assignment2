@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <label className={style.label}>
-        Selecte a Game size
+        Select a Game size
         <select
           className={style.select}
           value={size.toString()}
