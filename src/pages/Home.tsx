@@ -29,7 +29,7 @@ export default function Home() {
       date:"",
       result:""
     })
-    navigate(`${API_HOST}game?size=${size}`)
+    navigate(`game?size=${size}`)
   }
 
   return (
@@ -42,7 +42,7 @@ export default function Home() {
           onChange={(event) => setSize(parseInt(event.target.value))}
         >
           {AvailableGameSize.map((value) => (
-            <option key={`${API_HOST}size-${value}`} value={value.toString()}>
+            <option key={`size-${value}`} value={value.toString()}>
               {value}
             </option>
             
