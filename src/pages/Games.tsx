@@ -28,7 +28,7 @@ export default function Games() {
             </p>
             <button
               className={style.button}
-              onClick={() => navigate(`game-log/${game._id}`)} // use timestamp as id
+              onClick={() => navigate(`${API_HOST}/game-log/${game._id}`)} // use timestamp as id
             >
               View game log
             </button>
