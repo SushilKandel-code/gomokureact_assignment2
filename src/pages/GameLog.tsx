@@ -22,6 +22,7 @@ export default function GameLog() {
     setGameById(getDetails)
   }
 
+  //eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     getGameById()
   }, [])
